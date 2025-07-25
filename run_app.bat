@@ -1,0 +1,3 @@
+@echo off
+echo 正在啟動 YouTube 下載器...
+venv\Scripts\python.exe main.py

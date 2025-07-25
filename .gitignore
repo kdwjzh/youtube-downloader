@@ -1,0 +1,89 @@
+# Python 相關文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虛擬環境
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE 相關文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Windows 系統文件
+desktop.ini
+Thumbs.db
+ehthumbs.db
+*.lnk
+
+# 日誌文件
+*.log
+logs/
+
+# 臨時文件
+*.tmp
+*.temp
+temp/
+tmp/
+
+# 用戶數據和配置
+downloads/
+*.db
+*.sqlite
+*.sqlite3
+config.ini
+settings.json
+
+# 測試覆蓋率報告
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# 環境變量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 打包文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 本地開發文件
+local_settings.py
+development.py
+
+# 排除特定的 md 檔案
+ytdlp_gui_project_plan.md
