@@ -1,79 +1,79 @@
 @echo off
 echo ========================================
-echo     YouTube 下載器 - 自動安裝腳本
+echo     YouTube Downloader - Auto Installer
 echo ========================================
 echo.
 
-:: 檢查 Python 是否已安裝
-echo [1/4] 檢查 Python 環境...
+:: Check if Python is installed
+echo [1/4] Checking Python environment...
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo 錯誤: 未找到 Python！
-    echo 請先安裝 Python 3.8 或更高版本
-    echo 下載地址: https://www.python.org/downloads/
+    echo ERROR: Python not found!
+    echo Please install Python 3.8 or higher first
+    echo Download: https://www.python.org/downloads/
     pause
     exit /b 1
 )
-echo ✓ Python 已安裝
+echo [OK] Python is installed
 
-:: 創建虛擬環境
+:: Create virtual environment
 echo.
-echo [2/4] 創建虛擬環境...
+echo [2/4] Creating virtual environment...
 if exist venv (
-    echo ✓ 虛擬環境已存在
+    echo [OK] Virtual environment already exists
 ) else (
-    echo 正在創建虛擬環境...
+    echo Creating virtual environment...
     python -m venv venv
     if errorlevel 1 (
-        echo 錯誤: 無法創建虛擬環境
+        echo ERROR: Failed to create virtual environment
         pause
         exit /b 1
     )
-    echo ✓ 虛擬環境創建成功
+    echo [OK] Virtual environment created successfully
 )
 
-:: 激活虛擬環境並安裝依賴
+:: Activate virtual environment and install dependencies
 echo.
-echo [3/4] 安裝依賴包...
-echo 正在安裝所需的 Python 包，請稍候...
+echo [3/4] Installing dependencies...
+echo Installing required Python packages, please wait...
 call venv\Scripts\activate.bat
 pip install --upgrade pip
 pip install -r requirements.txt
 if errorlevel 1 (
-    echo 錯誤: 依賴包安裝失敗
-    echo 請檢查網絡連接或 requirements.txt 文件
+    echo ERROR: Failed to install dependencies
+    echo Please check your internet connection or requirements.txt file
     pause
     exit /b 1
 )
-echo ✓ 依賴包安裝完成
+echo [OK] Dependencies installed successfully
 
-:: 檢查 FFmpeg
+:: Check FFmpeg
 echo.
-echo [4/4] 檢查 FFmpeg...
+echo [4/4] Checking FFmpeg...
 ffmpeg -version >nul 2>&1
 if errorlevel 1 (
-    echo ⚠ 警告: 未找到 FFmpeg
-    echo FFmpeg 用於音頻/視頻處理，建議安裝以獲得最佳體驗
-    echo 下載地址: https://ffmpeg.org/download.html
+    echo [WARNING] FFmpeg not found
+    echo FFmpeg is used for audio/video processing
+    echo Download: https://ffmpeg.org/download.html
     echo.
-    echo 您也可以繼續使用，部分功能可能受限
+    echo You can continue without it, but some features may be limited
 ) else (
-    echo ✓ FFmpeg 已安裝
+    echo [OK] FFmpeg is installed
 )
 
-:: 安裝完成
+:: Installation complete
 echo.
 echo ========================================
-echo           安裝完成！
+echo         Installation Complete!
 echo ========================================
 echo.
-echo 使用方法:
-echo   1. 雙擊 run_app.bat 啟動程序
-echo   2. 或者在命令行中運行: run_app.bat
+echo How to use:
+echo   1. Double-click run_app.bat to start the program
+echo   2. Or run in command line: run_app.bat
 echo.
-echo 如有問題，請檢查:
-echo   - Python 版本是否為 3.8+
-echo   - 網絡連接是否正常
-echo   - requirements.txt 文件是否存在
+echo If you have issues, please check:
+echo   - Python version is 3.8 or higher
+echo   - Internet connection is working
+echo   - requirements.txt file exists
 echo.
 pause
