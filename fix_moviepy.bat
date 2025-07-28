@@ -4,6 +4,19 @@ echo       MoviePy Installation Fix
 echo ========================================
 echo.
 
+:: Check FFmpeg first
+echo Checking FFmpeg availability...
+ffmpeg -version >nul 2>&1
+if errorlevel 1 (
+    echo [WARNING] FFmpeg not found in system PATH
+    echo MoviePy will use imageio-ffmpeg as fallback
+    echo For better performance, consider installing FFmpeg:
+    echo https://ffmpeg.org/download.html
+    echo.
+) else (
+    echo [OK] FFmpeg is available
+)
+
 :: Activate virtual environment
 echo Activating virtual environment...
 call venv\Scripts\activate.bat

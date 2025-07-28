@@ -1,0 +1,46 @@
+========================================
+       FFmpeg Installation Guide
+========================================
+
+If you're experiencing issues with MoviePy, it might be due to missing FFmpeg.
+Here's how to install FFmpeg on Windows:
+
+METHOD 1: Download Pre-built Binaries (Recommended)
+--------------------------------------------------
+1. Go to: https://www.gyan.dev/ffmpeg/builds/
+2. Download "release builds" -> "ffmpeg-release-essentials.zip"
+3. Extract the zip file to C:\ffmpeg
+4. Add C:\ffmpeg\bin to your Windows PATH:
+   - Press Win + R, type "sysdm.cpl", press Enter
+   - Click "Environment Variables"
+   - Under "System Variables", find "Path", click "Edit"
+   - Click "New" and add: C:\ffmpeg\bin
+   - Click OK on all dialogs
+5. Restart your command prompt
+6. Test by typing: ffmpeg -version
+
+METHOD 2: Using Chocolatey (if you have it)
+-------------------------------------------
+1. Open Command Prompt as Administrator
+2. Run: choco install ffmpeg
+
+METHOD 3: Using Winget (Windows 10/11)
+--------------------------------------
+1. Open Command Prompt
+2. Run: winget install ffmpeg
+
+ALTERNATIVE: Use imageio-ffmpeg (Automatic)
+------------------------------------------
+If you can't install FFmpeg system-wide, MoviePy can use imageio-ffmpeg
+as a fallback. This is automatically installed with MoviePy and should
+work without additional setup.
+
+TESTING
+-------
+After installation, run check_installation.bat to verify everything works.
+
+TROUBLESHOOTING
+--------------
+- Make sure to restart your command prompt after installing FFmpeg
+- If PATH doesn't work, try placing ffmpeg.exe in your project folder
+- For format conversion features, FFmpeg is strongly recommended

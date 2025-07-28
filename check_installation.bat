@@ -46,9 +46,21 @@ echo [4/5] Checking installed packages...
 echo Installed packages:
 pip list | findstr /i "customtkinter yt-dlp pillow requests mutagen moviepy"
 
+:: Check FFmpeg
+echo.
+echo [5/6] Checking FFmpeg...
+ffmpeg -version >nul 2>&1
+if errorlevel 1 (
+    echo [WARNING] FFmpeg not found in system PATH
+    echo This may cause MoviePy to fail
+    echo Download FFmpeg from: https://ffmpeg.org/download.html
+) else (
+    echo [OK] FFmpeg is available
+)
+
 :: Test imports
 echo.
-echo [5/5] Testing module imports...
+echo [6/6] Testing module imports...
 echo Testing customtkinter...
 python -c "import customtkinter; print('customtkinter: OK')" 2>nul
 if errorlevel 1 echo [ERROR] customtkinter import failed
