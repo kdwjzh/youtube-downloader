@@ -3,4 +3,4 @@ yt-dlp>=2023.7.6
 Pillow>=10.0.0
 requests>=2.31.0
 mutagen>=1.47.0
-moviepy>=1.0.3
+moviepy==1.0.3

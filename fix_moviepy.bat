@@ -32,8 +32,9 @@ pip install imageio imageio-ffmpeg
 pip install numpy decorator tqdm requests proglog
 
 echo.
-echo [3/3] Installing moviepy...
-pip install moviepy --no-cache-dir --force-reinstall
+echo [3/3] Installing moviepy version 1.0.3...
+echo IMPORTANT: Installing specific version 1.0.3 for compatibility
+pip install moviepy==1.0.3 --no-cache-dir --force-reinstall
 
 :: Test the installation
 echo.

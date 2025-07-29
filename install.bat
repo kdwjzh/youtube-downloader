@@ -71,8 +71,8 @@ if errorlevel 1 (
     echo Installing mutagen...
     pip install mutagen>=1.47.0
     
-    echo Installing moviepy (this may take a while)...
-    pip install moviepy>=1.0.3
+    echo Installing moviepy version 1.0.3 (this may take a while)...
+    pip install moviepy==1.0.3
     
     if errorlevel 1 (
         echo ERROR: Critical packages installation failed
