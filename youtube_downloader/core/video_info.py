@@ -114,7 +114,7 @@ class VideoInfoExtractor:
             'skip_download': True,
             'quiet': True,
             'no_warnings': True,
-            'ignoreerrors': False,
+            'ignoreerrors': True,  # 改為 True 以避免格式不可用錯誤
         }
         
         try:
