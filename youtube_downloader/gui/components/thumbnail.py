@@ -160,6 +160,8 @@ class ThumbnailViewer(ctk.CTkFrame):
                 'quiet': True, 
                 'no_warnings': True,
                 'skip_download': True,
+                'format': 'best',  # 添加格式選項以避免格式不可用錯誤
+                'ignoreerrors': True,  # 忽略錯誤以獲取基本信息
             }
             
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
