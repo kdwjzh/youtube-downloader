@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 # 應用程序版本
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.0.1"
 
 # 應用程序名稱
 APP_NAME = "YouTube Downloader"
